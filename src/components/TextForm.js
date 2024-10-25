@@ -30,7 +30,7 @@ export default function TextForm(props) {
 
   return (
     <>
-      <div className="container" style={{ color: props.mode === 'light' ? 'black' : 'white',color: props.mode2 === 'light' ? 'black' : 'white' }}>
+      <div className="container" style={{ color: props.mode === 'light' ? 'black' : 'white', color: props.mode2 === 'light' ? 'black' : 'white' }}>
         <h3 style={{ color: props.mode === 'light' ? 'black' : 'white' }}> {props.heading}</h3>
         <div className="mb-3">
           <textarea
@@ -57,7 +57,7 @@ export default function TextForm(props) {
       <div className="container" style={{ color: props.mode === 'light' ? 'black' : 'white' }}>
         <h2>Your Text Summary</h2>
         <p>
-          Your text has {text.split(" ").length - 1} words and {text.length}
+          Your text has {text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} words and {text.length}
           characters
         </p>
         <p>
